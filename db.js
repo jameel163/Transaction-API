@@ -1,13 +1,13 @@
 // db.js
-
+require('dotenv').config();
 const mysql = require('mysql');
 
 // Create a connection to the database
 const connection = mysql.createConnection({
-  host: 'localhost',     // MySQL server hostname
-  user: 'jameel M',          // MySQL username
-  password: 'localhost',  // MySQL password (replace with your own)
-  database: 'transaction management' // MySQL database name
+  host: process.env.DB_HOST,     // MySQL server hostname
+  user:process.env.DB_USER ,          // MySQL username
+  password: process.env.DB_PASSWORD,  // MySQL password (replace with your own)
+  database: process.env.DB_DBNAME // MySQL database name
 });
 
 // Connect to MySQL
